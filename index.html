@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuizMaster Rewards</title>
+    <link rel="icon" type="image/png" href="favico.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<script>
+     function detectOS() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      
+        if (/windows phone/i.test(userAgent)) {
+            console.log("Windows Phone");
+            return "Windows Phone";
+        }
+        if (/windows/i.test(userAgent)) {
+            console.log("Windows");
+            return "Windows";
+        }
+
+        if (/android/i.test(userAgent)) {
+            concole.log("Android");
+            return "Android";
+        }
+
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            console.log("IOS");
+            return "iOS";
+        }
+
+        console.log("Unknown")
+        return "Unknown";
+    }
+    function a() {
+        var os = detectOS()
+        var mm = document.getElementById("m")
+        if (os == "Windows") {
+            mm.innerHTML = "<h1>Welcome to QuizMaster Rewards!</h1><br><p>Challenge your knowledge and win amazing prizes! Download the app now:</p><br>Not Avilable For Windows!"
+        }
+        if (os == "Android") {
+            mm.innerHTML = "<h1>Welcome to QuizMaster Rewards!</h1><br><p>Challenge your knowledge and win amazing prizes! Download the app now:</p><br><a class='btn' href='https://play.google.com/store'>Download for Android</a>"
+        }
+        if (os == "IOS") {
+            mm.innerHTML = "<h1>Welcome to QuizMaster Rewards!</h1><br><p>Challenge your knowledge and win amazing prizes! Download the app now:</p><br><a class='btn' href='https://apps.apple.com'>Download for iOS</a>"
+        }
+    }
+    window.onload = function() {
+        a();
+    };
+</script>
+<body>
+    <div class="container" id="m">
+        <h1>Welcome to QuizMaster Rewards!</h1>
+        <p>Challenge your knowledge and win amazing prizes! Download the app now:</p>
+        <a class="btn" href="https://play.google.com/store">Download for Android</a>
+        <a class="btn" href="https://apps.apple.com">Download for iOS</a>
+    </div>
+</body>
+</html>
